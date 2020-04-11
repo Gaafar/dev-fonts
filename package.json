@@ -12,6 +12,7 @@
     "lint": "eslint . --ignore-path .gitignore --ext .ts,.tsx,.js,.jsx"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.0.6",
     "antd": "^4.1.2",
     "gatsby": "^2.20.16",
     "gatsby-plugin-antd": "^2.2.0",

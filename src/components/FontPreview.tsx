@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-import { Typography, Button, Tag } from 'antd';
-import { PlusOutlined, CopyOutlined } from '@ant-design/icons';
+import {
+  Typography, Button, Tag, Tooltip,
+} from 'antd';
+import { PlusOutlined, MinusOutlined, CopyOutlined } from '@ant-design/icons';
 import { fonts } from '../data/fonts';
 import './FontPreview.scss';
 
@@ -13,10 +15,12 @@ type EditorProps = {
   mode: string;
   code: string;
   setCode: (code: string) => void;
+  toggleCompare: (name: string) => void;
+  isInCompare: boolean;
 };
 
 export const FontPreview = ({
-  font, theme, mode, code, setCode,
+  font, theme, mode, code, setCode, toggleCompare, isInCompare,
 }: EditorProps) => {
   const editorElementRef = useRef(null);
   const codemirrorRef = useRef(null);
@@ -91,11 +95,13 @@ export const FontPreview = ({
 
       <div className="font-header">
         <div className="font-labels">
+          <Tooltip className="font-compare" title={isInCompare ? 'Remove from compare' : 'Add to compare'}>
+            <Button shape="circle" icon={isInCompare ? <MinusOutlined /> : <PlusOutlined />} onClick={() => { toggleCompare(font.displayName); }} />
+          </Tooltip>
           <Title className="font-name" level={3}>{font.displayName}</Title>
           {isFree && <Tag color="#87d068">💵free</Tag>}
           {font.ligatures && <Tag color="#fa8c16">🔗ligatures</Tag>}
         </div>
-
         <Button type="link" href={font.webPage} target="_blank" rel="noopener noreferrer">
           get this font
         </Button>

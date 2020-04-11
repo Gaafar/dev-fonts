@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import React, { useState } from 'react';
 import {
-  Select, Checkbox, AutoComplete, Badge,
+  Select, Checkbox, AutoComplete, Badge, Switch,
 } from 'antd';
 import Layout from '../components/layout';
 import { languages } from '../data/languages';
@@ -17,6 +17,17 @@ const config = {};
 
 export default () => {
   const [code, setCode] = useState(codeSample);
+  const [isCompareMode, setCompareMode] = useState(false);
+  const [compareSet, setCompareSet] = useState(new Set<string>());
+
+  const toggleCompare = (fontName) => {
+    if (compareSet.has(fontName)) {
+      compareSet.delete(fontName);
+    } else {
+      compareSet.add(fontName);
+    }
+    setCompareSet(new Set([...compareSet]));
+  };
 
   const [theme, setTheme] = useState('material-palenight');
   const onThemeChange = (value) => {
@@ -33,6 +44,10 @@ export default () => {
   const mode = languages.find((l) => l.name === language)?.mode!;
 
   const filteredFonts = fonts.filter((font) => {
+    if (isCompareMode && !compareSet.has(font.displayName)) {
+      return false;
+    }
+
     if (filters.free && font.price) {
       return false;
     }
@@ -50,7 +65,13 @@ export default () => {
 
   return (
     <>
-      <Helmet>
+      <Helmet
+        title="Dev Fonts"
+        meta={[
+          { name: 'description', content: 'A list of fonts for developers' },
+          { name: 'keywords', content: 'coding, developer, font, javascript, vscode' },
+        ]}
+      >
         <script
           src={`https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/${mode}/${mode}.min.js`}
           onLoad='document.dispatchEvent(new CustomEvent("mode-loaded"))'
@@ -101,7 +122,6 @@ export default () => {
 
         <div className="filter-wrapper">
           <div>
-
             <label>
               Filter fonts
             </label>
@@ -134,6 +154,14 @@ export default () => {
             </Checkbox>
           </div>
         </div>
+
+        <div className="compare-wrapper">
+          Compare
+          {' '}
+          <Switch className="compare-switch" checked={isCompareMode} onChange={(value) => { setCompareMode(value); }} />
+          {' '}
+          { compareSet.size > 0 ? [...compareSet].join(', ') : 'add fonts to compare'}
+        </div>
         <style>
           {`
             .codemirror-container {
@@ -159,6 +187,8 @@ export default () => {
             mode={mode}
             code={code}
             setCode={setCode}
+            toggleCompare={toggleCompare}
+            isInCompare={compareSet.has(font.displayName)}
           />
         ))}
       </Layout>
