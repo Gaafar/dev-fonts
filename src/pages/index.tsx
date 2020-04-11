@@ -1,6 +1,8 @@
 import { Helmet } from 'react-helmet';
 import React, { useState } from 'react';
-import { Select } from 'antd';
+import {
+  Select, Checkbox, AutoComplete, Badge,
+} from 'antd';
 import Layout from '../components/layout';
 import { languages } from '../data/languages';
 import { fonts } from '../data/fonts';
@@ -23,7 +25,25 @@ export default () => {
     setLanguage(value);
   };
 
+  const [filters, setFilters] = useState({ free: false, ligatures: false, name: '' });
+
   const mode = languages.find((l) => l.name === language)?.mode!;
+
+  const filteredFonts = fonts.filter((font) => {
+    if (filters.free && font.price) {
+      return false;
+    }
+
+    if (filters.ligatures && !font.ligatures) {
+      return false;
+    }
+
+    if (filters.name && !font.displayName.toLowerCase().includes(filters.name.toLowerCase())) {
+      return false;
+    }
+
+    return true;
+  });
 
   return (
     <>
@@ -76,6 +96,41 @@ export default () => {
           </div>
         </div>
 
+        <div className="filter-wrapper">
+          <div>
+
+            <label>
+              Filter fonts
+            </label>
+            <Badge count={filteredFonts.length} style={{ backgroundColor: '#52c41a' }} />
+
+            <AutoComplete
+              className="autocomplete"
+              style={{ width: 200 }}
+              options={fonts.map(({ displayName }) => ({ value: displayName }))}
+              placeholder="type font name"
+              filterOption={(inputValue, option) => option.value.toLowerCase().includes(inputValue.toLowerCase())}
+              onSelect={(value, option) => { setFilters((current) => ({ ...current, name: value })); }}
+              onChange={(value) => { if (!value) { setFilters((current) => ({ ...current, name: value })); } }}
+            />
+
+          </div>
+          <div>
+            <Checkbox
+              checked={filters.free}
+              onChange={(e) => { setFilters((current) => ({ ...current, free: e.target.checked })); }}
+            >
+              Free
+            </Checkbox>
+
+            <Checkbox
+              checked={filters.ligatures}
+              onChange={(e) => { setFilters((current) => ({ ...current, ligatures: e.target.checked })); }}
+            >
+              Ligatures
+            </Checkbox>
+          </div>
+        </div>
         <style>
           {`
             .codemirror-container {
@@ -93,7 +148,7 @@ export default () => {
             }
           `}
         </style>
-        {fonts.map((font) => (
+        {filteredFonts.map((font) => (
           <FontPreview
             key={font.familyName}
             font={font}

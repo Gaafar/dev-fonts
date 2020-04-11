@@ -77,7 +77,7 @@ export const FontPreview = ({ font, theme, mode }: EditorProps) => {
 
       <div className="font-header">
         <div className="font-labels">
-          <Title className="font-name" level={2}>{font.displayName}</Title>
+          <Title className="font-name" level={3}>{font.displayName}</Title>
           {isFree && <Tag color="#87d068">💵free</Tag>}
           {font.ligatures && <Tag color="#fa8c16">🔗ligatures</Tag>}
         </div>
