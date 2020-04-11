@@ -15,3 +15,24 @@
   margin-bottom: 0 !important;
   margin-right: 0.4em;
 }
+
+.codemirror-wrapper {
+  position: relative;
+
+  .codemirror-buttons {
+    display: none;
+  }
+
+  &:hover {
+    .codemirror-buttons {
+      display: initial;
+    }
+  }
+}
+
+.codemirror-buttons { 
+  z-index: 10;
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+}

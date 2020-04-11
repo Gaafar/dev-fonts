@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Typography, Button, Tag } from 'antd';
-import { code } from '../data/code';
+import { PlusOutlined, CopyOutlined } from '@ant-design/icons';
 import { fonts } from '../data/fonts';
 import './FontPreview.scss';
 
@@ -11,9 +11,13 @@ type EditorProps = {
   font: (typeof fonts)[0];
   theme: string;
   mode: string;
+  code: string;
+  setCode: (code: string) => void;
 };
 
-export const FontPreview = ({ font, theme, mode }: EditorProps) => {
+export const FontPreview = ({
+  font, theme, mode, code, setCode,
+}: EditorProps) => {
   const editorElementRef = useRef(null);
   const codemirrorRef = useRef(null);
   const modeRef = useRef(mode);
@@ -55,6 +59,10 @@ export const FontPreview = ({ font, theme, mode }: EditorProps) => {
   }, []);
 
   useEffect(() => {
+    codemirrorRef.current?.setValue(code);
+  }, [code]);
+
+  useEffect(() => {
     codemirrorRef.current.setOption('theme', theme);
   }, [theme]);
 
@@ -64,6 +72,12 @@ export const FontPreview = ({ font, theme, mode }: EditorProps) => {
 
   const className = font.familyName.replace(/\s/g, '');
   const isFree = (font.price || 0) === 0;
+
+  const applyCode = () => {
+    const newCode = codemirrorRef.current?.getValue();
+    setCode(newCode);
+  };
+
   return (
     <div className={className}>
       {font.srcLinks.map((srcLink) => (<link key={srcLink} rel="stylesheet" href={srcLink} />))}
@@ -86,8 +100,15 @@ export const FontPreview = ({ font, theme, mode }: EditorProps) => {
           get this font
         </Button>
       </div>
+      <div className="codemirror-wrapper">
 
-      <div className="codemirror-container" ref={editorElementRef} />
+        <div className="codemirror-container" ref={editorElementRef} />
+        <div className="codemirror-buttons">
+          <Button shape="round" onClick={applyCode} icon={<CopyOutlined />}>
+            Copy code to all
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };

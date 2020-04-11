@@ -7,6 +7,7 @@ import Layout from '../components/layout';
 import { languages } from '../data/languages';
 import { fonts } from '../data/fonts';
 import { themes } from '../data/themes';
+import { code as codeSample } from '../data/code';
 import './index.scss';
 import { FontPreview } from '../components/FontPreview';
 
@@ -15,6 +16,8 @@ const { Option } = Select;
 const config = {};
 
 export default () => {
+  const [code, setCode] = useState(codeSample);
+
   const [theme, setTheme] = useState('material-palenight');
   const onThemeChange = (value) => {
     setTheme(value);
@@ -154,6 +157,8 @@ export default () => {
             font={font}
             theme={theme}
             mode={mode}
+            code={code}
+            setCode={setCode}
           />
         ))}
       </Layout>
