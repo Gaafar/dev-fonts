@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Monoid Regular";
+  src: url("Monoid-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("Monoid-Regular.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("Monoid-Regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("Monoid-Regular.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("Monoid-Regular.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Monoid Bold";
+  src: url("Monoid-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("Monoid-Bold.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("Monoid-Bold.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("Monoid-Bold.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("Monoid-Bold.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Monoid Italic";
+  src: url("Monoid-Italic.eot");
+  /* IE9 Compat Modes */
+  src: url("Monoid-Italic.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("Monoid-Italic.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("Monoid-Italic.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("Monoid-Italic.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+}
