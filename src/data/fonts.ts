@@ -37,7 +37,7 @@ const rawFonts = [
   {
     displayName: 'Noto Mono',
     familyName: 'TypoPRO Noto Mono',
-    sort: 2,
+    sort: 3,
     webPage: 'https://www.google.com/get/noto/',
     srcLinks: [
       'https://cdn.jsdelivr.net/npm/@typopro/web-noto@3.7.5/TypoPRO-Noto.css',
@@ -64,7 +64,6 @@ const rawFonts = [
         `https://fonts.googleapis.com/css?family=${urlPart}&display=block`,
       ],
       ligatures,
-      price: 0,
     };
   }),
 ];

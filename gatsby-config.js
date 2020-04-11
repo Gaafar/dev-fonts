@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
-    siteName: `Using TypeScript Example`,
-    exampleUrl: `https://github.com/gatsbyjs/gatsby/tree/master/examples/using-typescript`,
+    siteName: `Dev Fonts`,
+    exampleUrl: `https://devfonts.gaif.dev/`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-antd`,
+    `gatsby-plugin-sass`,
+    // `gatsby-plugin-antd`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

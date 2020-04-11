@@ -1,0 +1,19 @@
+@import '~antd/dist/antd.dark.css';
+/* @import '~antd/dist/antd.compact.css'; */
+
+a {
+  text-shadow: none;
+}
+
+body {
+  background-color: #1b1e2b;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    margin-right: 0.7em;
+  }
+}
