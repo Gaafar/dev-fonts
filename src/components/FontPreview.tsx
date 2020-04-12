@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import {
-  Typography, Button, Tag, Tooltip,
+  Typography, Button, Tag, Tooltip, Row,
 } from 'antd';
 import { PlusOutlined, MinusOutlined, CopyOutlined } from '@ant-design/icons';
 import { fonts } from '../data/fonts';
@@ -94,17 +94,21 @@ export const FontPreview = ({
       </style>
 
       <div className="font-header">
-        <div className="font-labels">
+        <Row align="middle">
           <Tooltip className="font-compare" title={isInCompare ? 'Remove from compare' : 'Add to compare'}>
             <Button shape="circle" icon={isInCompare ? <MinusOutlined /> : <PlusOutlined />} onClick={() => { toggleCompare(font.displayName); }} />
           </Tooltip>
-          <Title className="font-name" level={3}>{font.displayName}</Title>
-          {isFree && <Tag color="#87d068">💵free</Tag>}
-          {font.ligatures && <Tag color="#fa8c16">🔗ligatures</Tag>}
-        </div>
-        <Button type="link" href={font.webPage} target="_blank" rel="noopener noreferrer">
-          get this font
-        </Button>
+          <Title className="font-name" level={4}>{font.displayName}</Title>
+        </Row>
+        <Row align="middle" justify="space-between">
+          <Row className="font-labels" align="middle">
+            {isFree && <Tag color="#87d068">💵free</Tag>}
+            {font.ligatures && <Tag color="#fa8c16">🔗ligatures</Tag>}
+          </Row>
+          <Button type="link" href={font.webPage} target="_blank" rel="noopener noreferrer">
+            get font
+          </Button>
+        </Row>
       </div>
       <div className="codemirror-wrapper">
 

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import React, { useState } from 'react';
 import {
-  Select, Checkbox, AutoComplete, Badge, Switch,
+  Select, Checkbox, AutoComplete, Badge, Switch, Row, Col,
 } from 'antd';
 import Layout from '../components/layout';
 import { languages } from '../data/languages';
@@ -12,8 +12,6 @@ import './index.scss';
 import { FontPreview } from '../components/FontPreview';
 
 const { Option } = Select;
-
-const config = {};
 
 export default () => {
   const [code, setCode] = useState(codeSample);
@@ -84,84 +82,96 @@ export default () => {
       </Helmet>
       <Layout>
 
-        <div className="dropdown-wrapper">
-          <div>
-            <label htmlFor="theme-selector">Theme</label>
-            <Select
-              id="theme-selector"
-              showSearch
-              style={{ width: 200 }}
-              value={theme}
-              onChange={onThemeChange}
-            >
-              {themes.map(({ name }) => (
-                <Option key={name} value={name}>
-                  {name}
-                </Option>
-              ))}
-            </Select>
-          </div>
+        <Row>
+          <Col span={24} md={12} className="row-spacer">
+            <Row>
+              <Col span={6}>
+                <label htmlFor="theme-selector">Theme</label>
+              </Col>
+              <Col>
+                <Select
+                  id="theme-selector"
+                  showSearch
+                  style={{ width: 200 }}
+                  value={theme}
+                  onChange={onThemeChange}
+                >
+                  {themes.map(({ name }) => (
+                    <Option key={name} value={name}>
+                      {name}
+                    </Option>
+                  ))}
+                </Select>
+              </Col>
+            </Row>
+          </Col>
+          <Col span={24} md={12} className="row-spacer">
+            <Row>
+              <Col span={6}>
+                <label htmlFor="language-selector">Language</label>
+              </Col>
+              <Col>
+                <Select
+                  id="language-selector"
+                  showSearch
+                  style={{ width: 150 }}
+                  value={language}
+                  onChange={onLanguageChange}
+                >
+                  {languages.map(({ name }) => (
+                    <Option key={name} value={name}>
+                      {name}
+                    </Option>
+                  ))}
+                </Select>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
 
-          <div>
-            <label htmlFor="language-selector">Language</label>
-            <Select
-              id="language-selector"
-              showSearch
-              style={{ width: 150 }}
-              value={language}
-              onChange={onLanguageChange}
-            >
-              {languages.map(({ name }) => (
-                <Option key={name} value={name}>
-                  {name}
-                </Option>
-              ))}
-            </Select>
-          </div>
-        </div>
-
-        <div className="filter-wrapper">
-          <div>
+        <Row className="filter-wrapper row-spacer">
+          <Col span={9} md={5}>
             <label>
               Filter fonts
             </label>
             <Badge count={filteredFonts.length} style={{ backgroundColor: '#52c41a' }} />
-
+          </Col>
+          <Col span={14} md={8}>
             <AutoComplete
               className="autocomplete"
-              style={{ width: 200 }}
+              style={{ width: '100%', maxWidth: 200 }}
               options={fonts.map(({ displayName }) => ({ value: displayName }))}
               placeholder="type font name"
               filterOption={(inputValue, option) => option.value.toLowerCase().includes(inputValue.toLowerCase())}
               onSelect={(value, option) => { setFilters((current) => ({ ...current, name: value })); }}
               onChange={(value) => { if (!value) { setFilters((current) => ({ ...current, name: value })); } }}
             />
+          </Col>
 
-          </div>
-          <div>
+          <Col span={9} md={1} />
+          <Col>
             <Checkbox
               checked={filters.free}
               onChange={(e) => { setFilters((current) => ({ ...current, free: e.target.checked })); }}
             >
               Free
             </Checkbox>
-
             <Checkbox
               checked={filters.ligatures}
               onChange={(e) => { setFilters((current) => ({ ...current, ligatures: e.target.checked })); }}
             >
               Ligatures
             </Checkbox>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
-        <div className="compare-wrapper">
+        <Row className="compare-wrapper">
           Compare
           {' '}
           <Switch className="compare-switch" checked={isCompareMode} onChange={(value) => { setCompareMode(value); }} />
           {' '}
           { compareSet.size > 0 ? [...compareSet].join(', ') : 'add fonts to compare'}
-        </div>
+        </Row>
         <style>
           {`
             .codemirror-container {
@@ -170,8 +180,6 @@ export default () => {
 
             .CodeMirror {
               height: auto;
-              font-size: ${config.fontSize};
-              line-height: ${config.lineHeight};
               font-variant-ligatures: contextual;
               padding-top: 6px;
               padding-bottom: 6px;
@@ -179,18 +187,20 @@ export default () => {
             }
           `}
         </style>
-        {filteredFonts.map((font) => (
-          <FontPreview
-            key={font.familyName}
-            font={font}
-            theme={theme}
-            mode={mode}
-            code={code}
-            setCode={setCode}
-            toggleCompare={toggleCompare}
-            isInCompare={compareSet.has(font.displayName)}
-          />
-        ))}
+        <div>
+          {filteredFonts.map((font) => (
+            <FontPreview
+              key={font.familyName}
+              font={font}
+              theme={theme}
+              mode={mode}
+              code={code}
+              setCode={setCode}
+              toggleCompare={toggleCompare}
+              isInCompare={compareSet.has(font.displayName)}
+            />
+          ))}
+        </div>
       </Layout>
     </>
   );

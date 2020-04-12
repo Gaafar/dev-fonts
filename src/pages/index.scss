@@ -9,35 +9,16 @@ body {
   background-color: #1b1e2b;
 }
 
-.dropdown-wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1em;
-
-  label {
-    margin-right: 0.7em;
-  }
-}
-
 .filter-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1em;
-  
-  label {
-    margin-right: 0.2em;
-  }
-
-  .autocomplete {
-    margin: 0 2em;
+  .ant-badge {
+    margin-left: 0.5em;
   }
 }
 
-.compare-wrapper {
-  margin-bottom: 1em;
+.compare-switch {
+  margin: 0 0.4em;
+}
 
-  .compare-switch {
-    margin: 0 0.4em;
-  }
+.row-spacer {
+  margin: .3em 0;
 }

@@ -1,19 +1,10 @@
 .font-header { 
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
   margin-bottom: 0.8em;
   margin-top: 2em;
 }
 
-.font-labels {
-  display: flex;
-  align-items: center;
-}
-
 .font-name {
   margin-bottom: 0 !important;
-  margin-right: 0.4em;
 }
 
 .codemirror-wrapper {
