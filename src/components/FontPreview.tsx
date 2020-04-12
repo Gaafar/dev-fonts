@@ -83,7 +83,7 @@ export const FontPreview = ({
 
   return (
     <div className={className}>
-      {font.srcLinks.map((srcLink) => (<link key={srcLink} rel="stylesheet" href={srcLink} />))}
+      <link key={font.srcLink} rel="stylesheet" href={font.srcLink} />
       <style>
         {`
         .${className} .font-name, .${className} .CodeMirror {

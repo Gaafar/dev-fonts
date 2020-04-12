@@ -30,18 +30,14 @@ const rawFonts = [
     sort: 2,
     ligatures: true,
     webPage: 'https://rubjo.github.io/victor-mono/',
-    srcLinks: [
-      'https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css',
-    ],
+    srcLink: 'https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css',
   },
   {
     displayName: 'Noto Mono',
     familyName: 'TypoPRO Noto Mono',
     sort: 3,
     webPage: 'https://www.google.com/get/noto/',
-    srcLinks: [
-      'https://cdn.jsdelivr.net/npm/@typopro/web-noto@3.7.5/TypoPRO-Noto.css',
-    ],
+    srcLink: 'https://cdn.jsdelivr.net/npm/@typopro/web-noto@3.7.5/TypoPRO-Noto.css',
   },
   {
     displayName: 'Monoid',
@@ -49,7 +45,7 @@ const rawFonts = [
     sort: 2,
     ligatures: true,
     webPage: 'http://larsenwork.com/monoid/',
-    srcLinks: ['/fonts/monoid/monoid.css'],
+    srcLink: '/fonts/monoid/monoid.css',
   },
 
   ...googleFonts.map((font) => {
@@ -60,9 +56,7 @@ const rawFonts = [
       displayName: name,
       familyName: name,
       webPage: `https://fonts.google.com/specimen/${urlPart}`,
-      srcLinks: [
-        `https://fonts.googleapis.com/css?family=${urlPart}&display=block`,
-      ],
+      srcLink: `https://fonts.googleapis.com/css?family=${urlPart}&display=block`,
       ligatures,
     };
   }),
