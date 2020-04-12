@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import React, { useState } from 'react';
 import {
-  Select, Checkbox, AutoComplete, Badge, Switch, Row, Col,
+  Select, Checkbox, AutoComplete, Badge, Switch, Row, Col, Typography,
 } from 'antd';
 import Layout from '../components/layout';
 import { languages } from '../data/languages';
@@ -12,6 +12,7 @@ import './index.scss';
 import { FontPreview } from '../components/FontPreview';
 
 const { Option } = Select;
+const { Title } = Typography;
 
 export default () => {
   const [code, setCode] = useState(codeSample);
@@ -81,7 +82,9 @@ export default () => {
         />
       </Helmet>
       <Layout>
-
+        <Title level={2} style={{ fontFamily: 'Courier New, monospace'}}>
+          Dev Fonts
+        </Title>
         <Row>
           <Col span={24} md={12} className="row-spacer">
             <Row>

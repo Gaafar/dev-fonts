@@ -6,7 +6,6 @@ import { PlusOutlined, MinusOutlined, CopyOutlined } from '@ant-design/icons';
 import { fonts } from '../data/fonts';
 import './FontPreview.scss';
 
-
 const { Title } = Typography;
 
 type EditorProps = {
@@ -87,7 +86,7 @@ export const FontPreview = ({
       {font.srcLinks.map((srcLink) => (<link key={srcLink} rel="stylesheet" href={srcLink} />))}
       <style>
         {`
-        .${className} .CodeMirror {
+        .${className} .font-name, .${className} .CodeMirror {
           font-family: ${font.familyName}, Comic Sans MS !important;
         }
       `}
