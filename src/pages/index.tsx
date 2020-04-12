@@ -1,8 +1,9 @@
 import { Helmet } from 'react-helmet';
 import React, { useState } from 'react';
 import {
-  Select, Checkbox, AutoComplete, Badge, Switch, Row, Col, Typography,
+  Select, Checkbox, AutoComplete, Badge, Switch, Row, Col, Typography, Button,
 } from 'antd';
+import { GithubOutlined, TwitterOutlined } from '@ant-design/icons';
 import Layout from '../components/layout';
 import { languages } from '../data/languages';
 import { fonts } from '../data/fonts';
@@ -13,6 +14,9 @@ import { FontPreview } from '../components/FontPreview';
 
 const { Option } = Select;
 const { Title } = Typography;
+
+const shareUrl = 'https://devfonts.gafi.dev/';
+const shareMessage = 'Checkout the best fonts for developers!';
 
 export default () => {
   const [code, setCode] = useState(codeSample);
@@ -82,9 +86,41 @@ export default () => {
         />
       </Helmet>
       <Layout>
-        <Title level={2} style={{ fontFamily: 'Courier New, monospace'}}>
-          Dev Fonts
-        </Title>
+        <Row justify="space-between">
+          <Row align="bottom">
+            <Title level={2} style={{ fontFamily: 'Courier New, monospace', marginBottom: 0 }}>
+              Dev Fonts
+            </Title>
+            <Button
+              className="no-after"
+              type="link"
+              href="https://twitter.com/imGaafar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              by Gafi
+            </Button>
+          </Row>
+
+          <Row justify="end" className="links-row">
+            <Button
+              className="no-after"
+              type="link"
+              icon={<GithubOutlined />}
+              href="https://github.com/Gaafar/dev-fonts"
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+            <Button
+              className="no-after"
+              type="link"
+              icon={<TwitterOutlined />}
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}&url=${encodeURIComponent(shareUrl)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          </Row>
+        </Row>
         <Row>
           <Col span={24} md={12} className="row-spacer">
             <Row>

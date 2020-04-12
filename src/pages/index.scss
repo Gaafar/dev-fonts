@@ -5,6 +5,10 @@ a {
   text-shadow: none;
 }
 
+.no-after::after { 
+  content: '' !important;
+}
+
 body {
   background-color: #1b1e2b;
 }
@@ -21,4 +25,14 @@ body {
 
 .row-spacer {
   margin: .3em 0;
+}
+
+.links-row {
+  .anticon {
+    font-size: 25px;
+  }
+
+  a {
+    margin: 0 5px;
+  }
 }
