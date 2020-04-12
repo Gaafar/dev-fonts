@@ -1,10 +1,12 @@
-export const code = `for (let index = 0; index < array.length; index++) {
-  const element = array[index]
-  if (element >= 5 || element === 3 && element !== 2) {
-    log(element)
-  }
-}
+import { fonts } from './fonts';
 
-const doIt = () => {
-  log('doing it')
-}`;
+// show brackets, braces, parens, equality ligs, && ||, arrow, gte
+
+export const code = `fonts.forEach(({ id, name, rating }) => {
+  if (favorite[id]) {
+    console.log(\`favorite font: \${name}\`);
+  }
+  if (rating >= 4 || (rating == 5 && rating !== 0)) {
+    console.log('popular font');
+  }
+});`;
