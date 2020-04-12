@@ -15,5 +15,11 @@ module.exports = {
         omitGoogleFont: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-163309379-1",
+      },
+    },
   ],
 }
