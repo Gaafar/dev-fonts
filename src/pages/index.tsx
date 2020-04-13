@@ -174,7 +174,7 @@ export default () => {
               className="autocomplete"
               style={{ width: '100%', maxWidth: 200 }}
               options={fonts.map(({ displayName }) => ({ value: displayName }))}
-              placeholder="type font name"
+              placeholder="search by name"
               filterOption={(inputValue, option) => option.value.toLowerCase().includes(inputValue.toLowerCase())}
               onSelect={(value, option) => { setFilters((current) => ({ ...current, name: value })); }}
               onChange={(value) => { if (!value) { setFilters((current) => ({ ...current, name: value })); } }}
