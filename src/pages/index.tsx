@@ -68,13 +68,7 @@ export default () => {
 
   return (
     <>
-      <Helmet
-        title="Dev Fonts"
-        meta={[
-          { name: 'description', content: 'Interactive list of the best fonts for developers' },
-          { name: 'keywords', content: 'devfonts, devfont, coding, developer, font, javascript, vscode' },
-        ]}
-      >
+      <Helmet>
         <script
           src={`https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/${mode}/${mode}.min.js`}
           onLoad='document.dispatchEvent(new CustomEvent("mode-loaded"))'
