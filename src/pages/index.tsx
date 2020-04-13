@@ -183,12 +183,12 @@ export default () => {
 
           <Col span={9} md={1} />
           <Col>
-            <Checkbox
+            {/* <Checkbox
               checked={filters.free}
               onChange={(e) => { setFilters((current) => ({ ...current, free: e.target.checked })); }}
             >
               Free
-            </Checkbox>
+            </Checkbox> */}
             <Checkbox
               checked={filters.ligatures}
               onChange={(e) => { setFilters((current) => ({ ...current, ligatures: e.target.checked })); }}
