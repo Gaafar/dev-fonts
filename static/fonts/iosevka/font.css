@@ -4,5 +4,5 @@
 	font-weight: 400;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('woff2/iosevka-regular.woff2') format('woff2'), url('woff/iosevka-regular.woff') format('woff');
+	src: url('iosevka-regular.woff2') format('woff2'), url('iosevka-regular.woff') format('woff');
 }
