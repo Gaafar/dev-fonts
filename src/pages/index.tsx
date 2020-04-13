@@ -15,8 +15,8 @@ import { FontPreview } from '../components/FontPreview';
 const { Option } = Select;
 const { Title } = Typography;
 
-const shareUrl = 'https://devfonts.gafi.dev/';
-const shareMessage = 'Checkout the best fonts for developers!';
+const shareMessage = `List of the best coding fonts with live preview & themes 😍 https://devfonts.gafi.dev/
+by @imGaafar`;
 
 export default () => {
   const [code, setCode] = useState(codeSample);
@@ -109,7 +109,7 @@ export default () => {
               className="no-after"
               type="link"
               icon={<TwitterOutlined />}
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}&url=${encodeURIComponent(shareUrl)}`}
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
             />
