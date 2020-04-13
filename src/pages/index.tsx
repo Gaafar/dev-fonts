@@ -217,6 +217,7 @@ export default () => {
               padding-top: 6px;
               padding-bottom: 6px;
               border-radius: 6px;
+              font-size: 1.3em;
             }
           `}
         </style>
