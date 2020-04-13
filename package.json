@@ -22,13 +22,11 @@
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-plugin-typography": "^2.4.1",
     "lodash": "^4.17.15",
-    "lodash.orderby": "^4.6.0",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-typography": "^0.16.19",
-    "tailwindcss": "^1.2.0",
     "typography": "^0.16.19",
     "typography-theme-bootstrap": "^0.16.19"
   },
