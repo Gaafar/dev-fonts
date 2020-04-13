@@ -1,13 +1,13 @@
 // show brackets, braces, parens, equality ligs, && ||, arrow, gte
 
 export const code = `fonts.forEach(font => {
-  const { id, name, rating } = font;
-
+  const { id, name, likes } = font;
   if (
-    rating >= 3
-    || (rating === 5 && rating != 0)
-    || popular[id]
+    likes >= 3
+    || (likes === 5 && likes != 0)
+    || favorites[id]
   ) {
-    console.log(\`\${name} is popular\`);
+    coolFonts++;
+    console.log(\`\${name} is cool!\`);
   }
 });`;
