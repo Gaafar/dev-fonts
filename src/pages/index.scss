@@ -1,8 +1,9 @@
 @import '~antd/dist/antd.dark.css';
 /* @import '~antd/dist/antd.compact.css'; */
 
-a {
+a, .ant-btn {
   text-shadow: none;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .no-after::after { 
@@ -13,18 +14,21 @@ body {
   background-color: #1b1e2b;
 }
 
+//////////////////////
+$margin: .5rem;
+
 .filter-wrapper {
   .ant-badge {
-    margin-left: 0.5em;
+    margin-left: $margin;
   }
 }
 
 .compare-switch {
-  margin: 0 0.4em;
+  margin: $margin 0.4em;
 }
 
 .row-spacer {
-  margin: .3em 0;
+  margin: $margin 0;
 }
 
 .links-row {

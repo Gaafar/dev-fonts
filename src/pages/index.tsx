@@ -71,8 +71,8 @@ export default () => {
       <Helmet
         title="Dev Fonts"
         meta={[
-          { name: 'description', content: 'A list of fonts for developers' },
-          { name: 'keywords', content: 'coding, developer, font, javascript, vscode' },
+          { name: 'description', content: 'Interactive list of the best fonts for developers' },
+          { name: 'keywords', content: 'devfonts, devfont, coding, developer, font, javascript, vscode' },
         ]}
       >
         <script
@@ -88,21 +88,21 @@ export default () => {
       <Layout>
         <Row justify="space-between">
           <Row align="bottom">
-            <Title level={2} style={{ fontFamily: 'Courier New, monospace', marginBottom: 0 }}>
+            <Title level={2} style={{ fontFamily: 'Courier New, monospace', marginBottom: '1rem' }}>
               Dev Fonts
             </Title>
+          </Row>
+          <Row justify="end" className="links-row">
             <Button
               className="no-after"
               type="link"
               href="https://twitter.com/imGaafar"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ padding: 0 }}
             >
               by Gafi
             </Button>
-          </Row>
-
-          <Row justify="end" className="links-row">
             <Button
               className="no-after"
               type="link"
@@ -121,9 +121,9 @@ export default () => {
             />
           </Row>
         </Row>
-        <Row>
+        <Row align="middle">
           <Col span={24} md={12} className="row-spacer">
-            <Row>
+            <Row align="middle">
               <Col span={6}>
                 <label htmlFor="theme-selector">Theme</label>
               </Col>
@@ -145,7 +145,7 @@ export default () => {
             </Row>
           </Col>
           <Col span={24} md={12} className="row-spacer">
-            <Row>
+            <Row align="middle">
               <Col span={6}>
                 <label htmlFor="language-selector">Language</label>
               </Col>
@@ -168,7 +168,7 @@ export default () => {
           </Col>
         </Row>
 
-        <Row className="filter-wrapper row-spacer">
+        <Row align="middle" className="filter-wrapper row-spacer">
           <Col span={9} md={5}>
             <label>
               Filter fonts
@@ -204,7 +204,7 @@ export default () => {
           </Col>
         </Row>
 
-        <Row className="compare-wrapper">
+        <Row align="middle" className="row-spacer">
           Compare
           {' '}
           <Switch className="compare-switch" checked={isCompareMode} onChange={(value) => { setCompareMode(value); }} />
