@@ -22,8 +22,8 @@ export default function HTML(props) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <title>Dev Fonts</title>
-        <meta name="description" content="Interactive list of the best fonts for developers" />
-        <meta name="keywords" content="devfonts,devfont,coding,developer,font,javascript,vscode" />
+        <meta name="description" content="Interactive list of the best fonts for developers with options to preview fonts and themes" />
+        <meta name="keywords" content="devfonts,devfont,coding,developer,fonts,javascript,vscode,themes,preview" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
