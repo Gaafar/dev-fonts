@@ -89,6 +89,13 @@ const rawFonts = [
     srcLink: '/fonts/hasklig/font.css',
   },
   {
+    displayName: 'Hack',
+    familyName: 'Hack',
+    sort: 3,
+    webPage: 'https://sourcefoundry.org/hack',
+    srcLink: 'https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css',
+  },
+  {
     displayName: 'Noto Mono',
     familyName: 'TypoPRO Noto Mono',
     sort: 3,
