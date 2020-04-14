@@ -4,6 +4,7 @@ List of the best fonts for coding with live preview [devfonts.gafi.dev](https://
 
 ## Features
 * Live preview of all fonts with your code samples
+* Select specific fonts to compare
 * Choose editor themes
 * Choose your language for syntax highlights
 
