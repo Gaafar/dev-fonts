@@ -33,6 +33,16 @@ const rawFonts = [
     srcLink: '/fonts/cascadia/font.css',
   },
   {
+    displayName: 'Dank Mono',
+    familyName: 'dm',
+    sort: 2,
+    ligatures: true,
+    webPage: 'https://dank.sh',
+    srcLink: '/fonts/dank-mono/font.css',
+    price: '£40',
+    dateAdded: '2020-04-21T17:07:20.226Z',
+  },
+  {
     displayName: 'JetBrains Mono',
     familyName: 'JetBrains Mono',
     sort: 2,
