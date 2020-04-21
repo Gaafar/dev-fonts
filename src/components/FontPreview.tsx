@@ -18,6 +18,9 @@ type EditorProps = {
   isInCompare: boolean;
 };
 
+// 2 weeks in milliseconds
+const newPeriod = 2 * 7 * 24 * 60 * 60 * 1000;
+
 export const FontPreview = ({
   font, theme, mode, code, setCode, toggleCompare, isInCompare,
 }: EditorProps) => {
@@ -75,6 +78,7 @@ export const FontPreview = ({
 
   const className = font.familyName.replace(/\s/g, '');
   const isFree = (font.price || 0) === 0;
+  const isNew = font.dateAdded && (Date.now() - new Date(font.dateAdded).valueOf() < newPeriod)
 
   const applyCode = () => {
     const newCode = codemirrorRef.current?.getValue();
@@ -101,8 +105,9 @@ export const FontPreview = ({
         </Row>
         <Row align="middle" justify="space-between">
           <Row className="font-labels" align="middle">
-            {isFree && <Tag color="#87d068">💵free</Tag>}
-            {font.ligatures && <Tag color="#fa8c16">🔗ligatures</Tag>}
+            {isFree ? <Tag color="#87d068">🎁Free</Tag> : <Tag color="#fa8c16">💰{font.price}</Tag>}
+            {font.ligatures && <Tag color="#108ee9">🔗Ligatures</Tag>}
+            {isNew && <Tag color="#ec407a">🥳 New </Tag>}
           </Row>
           <Button type="link" href={font.webPage} target="_blank" rel="noopener noreferrer">
             get font
