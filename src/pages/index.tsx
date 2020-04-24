@@ -23,7 +23,7 @@ export default () => {
   const [isCompareMode, setCompareMode] = useState(false);
   const [compareSet, setCompareSet] = useState(new Set<string>());
 
-  const toggleCompare = (fontName) => {
+  const toggleCompare = (fontName: string) => {
     if (compareSet.has(fontName)) {
       compareSet.delete(fontName);
     } else {
@@ -33,12 +33,12 @@ export default () => {
   };
 
   const [theme, setTheme] = useState('material-palenight');
-  const onThemeChange = (value) => {
+  const onThemeChange = (value: string) => {
     setTheme(value);
   };
 
   const [language, setLanguage] = useState('JavaScript');
-  const onLanguageChange = (value) => {
+  const onLanguageChange = (value: string) => {
     setLanguage(value);
   };
 
@@ -71,6 +71,7 @@ export default () => {
       <Helmet>
         <script
           src={`https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/${mode}/${mode}.min.js`}
+          // @ts-ignore
           onLoad='document.dispatchEvent(new CustomEvent("mode-loaded"))'
         />
 
@@ -175,8 +176,8 @@ export default () => {
               style={{ width: '100%', maxWidth: 200 }}
               options={fonts.map(({ displayName }) => ({ value: displayName }))}
               placeholder="search by name"
-              filterOption={(inputValue, option) => option.value.toLowerCase().includes(inputValue.toLowerCase())}
-              onSelect={(value, option) => { setFilters((current) => ({ ...current, name: value })); }}
+              filterOption={(inputValue, option) => option?.value.toLowerCase().includes(inputValue.toLowerCase())}
+              onSelect={(value) => { setFilters((current) => ({ ...current, name: value })); }}
               onChange={(value) => { if (!value) { setFilters((current) => ({ ...current, name: value })); } }}
             />
           </Col>
