@@ -23,7 +23,7 @@ export default () => {
   const [isCompareMode, setCompareMode] = useState(false);
   const [compareSet, setCompareSet] = useState(new Set<string>());
 
-  const toggleCompare = (fontName) => {
+  const toggleCompare = (fontName: string) => {
     if (compareSet.has(fontName)) {
       compareSet.delete(fontName);
     } else {
@@ -33,12 +33,12 @@ export default () => {
   };
 
   const [theme, setTheme] = useState('material-palenight');
-  const onThemeChange = (value) => {
+  const onThemeChange = (value: string) => {
     setTheme(value);
   };
 
   const [language, setLanguage] = useState('JavaScript');
-  const onLanguageChange = (value) => {
+  const onLanguageChange = (value: string) => {
     setLanguage(value);
   };
 
@@ -71,6 +71,7 @@ export default () => {
       <Helmet>
         <script
           src={`https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/${mode}/${mode}.min.js`}
+          // @ts-ignore
           onLoad='document.dispatchEvent(new CustomEvent("mode-loaded"))'
         />
 
@@ -119,6 +120,7 @@ export default () => {
           <Col span={24} md={12} className="row-spacer">
             <Row align="middle">
               <Col span={6}>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label htmlFor="theme-selector">Theme</label>
               </Col>
               <Col>
@@ -141,6 +143,7 @@ export default () => {
           <Col span={24} md={12} className="row-spacer">
             <Row align="middle">
               <Col span={6}>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label htmlFor="language-selector">Language</label>
               </Col>
               <Col>
@@ -164,9 +167,9 @@ export default () => {
 
         <Row align="middle" className="filter-wrapper row-spacer">
           <Col span={9} md={5}>
-            <label>
+            <span>
               Filter fonts
-            </label>
+            </span>
             <Badge count={filteredFonts.length} style={{ backgroundColor: '#52c41a' }} />
           </Col>
           <Col span={14} md={8}>
@@ -175,9 +178,14 @@ export default () => {
               style={{ width: '100%', maxWidth: 200 }}
               options={fonts.map(({ displayName }) => ({ value: displayName }))}
               placeholder="search by name"
-              filterOption={(inputValue, option) => option.value.toLowerCase().includes(inputValue.toLowerCase())}
-              onSelect={(value, option) => { setFilters((current) => ({ ...current, name: value })); }}
-              onChange={(value) => { if (!value) { setFilters((current) => ({ ...current, name: value })); } }}
+              filterOption={(inputValue, option) => option?.value
+                .toLowerCase().includes(inputValue.toLowerCase())}
+              onSelect={(value) => {
+                setFilters((current) => ({ ...current, name: value }));
+              }}
+              onChange={(value) => {
+                if (!value) { setFilters((current) => ({ ...current, name: value })); }
+              }}
             />
           </Col>
 
@@ -185,13 +193,17 @@ export default () => {
           <Col>
             <Checkbox
               checked={filters.free}
-              onChange={(e) => { setFilters((current) => ({ ...current, free: e.target.checked })); }}
+              onChange={(e) => {
+                setFilters((current) => ({ ...current, free: e.target.checked }));
+              }}
             >
               Free
             </Checkbox>
             <Checkbox
               checked={filters.ligatures}
-              onChange={(e) => { setFilters((current) => ({ ...current, ligatures: e.target.checked })); }}
+              onChange={(e) => {
+                setFilters((current) => ({ ...current, ligatures: e.target.checked }));
+              }}
             >
               Ligatures
             </Checkbox>

@@ -23,7 +23,18 @@ const googleFonts = [
   { name: 'Nova Mono' },
 ];
 
-const rawFonts = [
+interface Font {
+  displayName: string;
+  familyName: string;
+  sort?: number;
+  ligatures?: boolean,
+  webPage: string;
+  srcLink: string;
+  price?: string;
+  dateAdded?: string;
+}
+
+const rawFonts: Font[] = [
   {
     displayName: 'Cascadia Code',
     familyName: 'Cascadia',

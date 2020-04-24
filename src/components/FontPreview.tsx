@@ -24,32 +24,30 @@ const newPeriod = 2 * 7 * 24 * 60 * 60 * 1000;
 export const FontPreview = ({
   font, theme, mode, code, setCode, toggleCompare, isInCompare,
 }: EditorProps) => {
-  const editorElementRef = useRef(null);
-  const codemirrorRef = useRef(null);
+  const editorElementRef = useRef<HTMLDivElement | null>(null);
+  const codeMirrorRef = useRef<CodeMirror.Editor | null>(null);
   const modeRef = useRef(mode);
   modeRef.current = mode;
   useEffect(() => {
     if (editorElementRef.current) {
-      codemirrorRef.current = window.CodeMirror(editorElementRef.current, {
+      codeMirrorRef.current = window.CodeMirror(editorElementRef.current!, {
         value: code,
         mode,
         theme,
-        matchBrackets: true,
         lineNumbers: true,
         viewportMargin: Infinity,
-        scrollBarStyle: null,
+        scrollbarStyle: 'null',
       });
     }
   }, []);
 
   useEffect(() => {
     const updateMode = () => {
-      codemirrorRef.current.setOption('mode', modeRef.current);
+      codeMirrorRef.current?.setOption('mode', modeRef.current);
     };
     const refreshEditor = () => {
       setTimeout(() => {
-        console.log('refresh');
-        codemirrorRef.current.refresh();
+        codeMirrorRef.current?.refresh();
       }, 100);
     };
 
@@ -65,23 +63,23 @@ export const FontPreview = ({
   }, []);
 
   useEffect(() => {
-    codemirrorRef.current?.setValue(code);
+    codeMirrorRef.current?.setValue(code);
   }, [code]);
 
   useEffect(() => {
-    codemirrorRef.current.setOption('theme', theme);
+    codeMirrorRef.current?.setOption('theme', theme);
   }, [theme]);
 
   useEffect(() => {
-    codemirrorRef.current.setOption('mode', mode);
+    codeMirrorRef.current?.setOption('mode', mode);
   }, [mode]);
 
   const className = font.familyName.replace(/\s/g, '');
   const isFree = (font.price || 0) === 0;
-  const isNew = font.dateAdded && (Date.now() - new Date(font.dateAdded).valueOf() < newPeriod)
+  const isNew = font.dateAdded && (Date.now() - new Date(font.dateAdded).valueOf() < newPeriod);
 
   const applyCode = () => {
-    const newCode = codemirrorRef.current?.getValue();
+    const newCode = codeMirrorRef.current!.getValue();
     setCode(newCode);
   };
 
@@ -105,9 +103,29 @@ export const FontPreview = ({
         </Row>
         <Row align="middle" justify="space-between">
           <Row className="font-labels" align="middle">
-            {isFree ? <Tag color="#87d068">🎁Free</Tag> : <Tag color="#fa8c16">💰{font.price}</Tag>}
-            {font.ligatures && <Tag color="#108ee9">🔗Ligatures</Tag>}
-            {isNew && <Tag color="#ec407a">🥳 New </Tag>}
+            {isFree ? (
+              <Tag color="#87d068">
+                <span role="img" aria-label="free">🎁</span>
+                Free
+              </Tag>
+            ) : (
+              <Tag color="#fa8c16">
+                <span role="img" aria-label="paid">💰</span>
+                {font.price}
+              </Tag>
+            )}
+            {font.ligatures && (
+              <Tag color="#108ee9">
+                <span role="img" aria-label="ligatures">🔗</span>
+                Ligatures
+              </Tag>
+            )}
+            {isNew && (
+              <Tag color="#ec407a">
+                <span role="img" aria-label="new">🥳</span>
+                New
+              </Tag>
+            )}
           </Row>
           <Button type="link" href={font.webPage} target="_blank" rel="noopener noreferrer">
             get font
