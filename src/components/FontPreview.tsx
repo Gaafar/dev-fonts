@@ -103,14 +103,29 @@ export const FontPreview = ({
         </Row>
         <Row align="middle" justify="space-between">
           <Row className="font-labels" align="middle">
-            {isFree ? <Tag color="#87d068">🎁Free</Tag> : (
+            {isFree ? (
+              <Tag color="#87d068">
+                <span role="img" aria-label="free">🎁</span>
+                Free
+              </Tag>
+            ) : (
               <Tag color="#fa8c16">
-                💰
+                <span role="img" aria-label="paid">💰</span>
                 {font.price}
               </Tag>
             )}
-            {font.ligatures && <Tag color="#108ee9">🔗Ligatures</Tag>}
-            {isNew && <Tag color="#ec407a">🥳 New </Tag>}
+            {font.ligatures && (
+              <Tag color="#108ee9">
+                <span role="img" aria-label="ligatures">🔗</span>
+                Ligatures
+              </Tag>
+            )}
+            {isNew && (
+              <Tag color="#ec407a">
+                <span role="img" aria-label="new">🥳</span>
+                New
+              </Tag>
+            )}
           </Row>
           <Button type="link" href={font.webPage} target="_blank" rel="noopener noreferrer">
             get font

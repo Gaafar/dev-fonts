@@ -1,7 +1,4 @@
-/* eslint-disable jsx-a11y/html-has-lang */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 

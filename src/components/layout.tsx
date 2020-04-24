@@ -1,11 +1,12 @@
-import * as React from "react"
+import * as React from 'react';
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography';
 
+// eslint-disable-next-line react/prop-types
 const MainLayout: React.FC = ({ children }) => (
   <div
     style={{
-      margin: `0 auto`,
+      margin: '0 auto',
       marginBottom: rhythm(0.6),
       marginTop: rhythm(0.6),
       maxWidth: 650,
@@ -15,6 +16,6 @@ const MainLayout: React.FC = ({ children }) => (
   >
     {children}
   </div>
-)
+);
 
-export default MainLayout
+export default MainLayout;
