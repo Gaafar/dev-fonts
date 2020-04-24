@@ -75,6 +75,14 @@ const rawFonts = [
     srcLink: 'https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css',
   },
   {
+    displayName: 'Consolas Ligaturized',
+    familyName: 'Consolas ligaturized',
+    sort: 2,
+    ligatures: true,
+    webPage: 'https://github.com/somq/consolas-ligaturized/',
+    srcLink: '/fonts/consolas-ligaturized/font.css',
+  },
+  {
     displayName: 'Iosevka',
     familyName: 'Iosevka Web',
     sort: 2,
