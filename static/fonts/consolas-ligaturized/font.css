@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Consolas ligaturized";
+  src: url("ConsolasLigaturized.woff2") format("woff2"),
+    url("ConsolasLigaturized.woff") format("woff"),
+    url("ConsolasLigaturized.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
