@@ -20,7 +20,7 @@ const googleFonts = [
   { name: 'Overpass Mono' },
   { name: 'Courier Prime' },
   // { name: 'Cutive Mono' },
-  { name: 'Nova Mono' }
+  { name: 'Nova Mono' },
 ];
 
 interface Font {
@@ -41,7 +41,7 @@ const rawFonts: Font[] = [
     sort: 1,
     ligatures: true,
     webPage: 'https://github.com/microsoft/cascadia-code',
-    srcLink: '/fonts/cascadia/font.css'
+    srcLink: '/fonts/cascadia/font.css',
   },
   {
     displayName: 'Dank Mono',
@@ -51,7 +51,7 @@ const rawFonts: Font[] = [
     webPage: 'https://dank.sh',
     srcLink: '/fonts/dank-mono/font.css',
     price: '£40',
-    dateAdded: '2020-04-21T17:07:20.226Z'
+    dateAdded: '2020-04-21T17:07:20.226Z',
   },
   {
     displayName: 'JetBrains Mono',
@@ -59,7 +59,7 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'https://www.jetbrains.com/lp/mono/',
-    srcLink: '/fonts/jetbrains-mono/font.css'
+    srcLink: '/fonts/jetbrains-mono/font.css',
   },
   {
     displayName: 'MonoLisa',
@@ -68,7 +68,7 @@ const rawFonts: Font[] = [
     price: '59 €',
     ligatures: true,
     webPage: 'https://www.monolisa.dev/',
-    srcLink: '/fonts/monolisa/font.css'
+    srcLink: '/fonts/monolisa/font.css',
   },
   {
     displayName: 'Monoid',
@@ -76,7 +76,7 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'http://larsenwork.com/monoid/',
-    srcLink: '/fonts/monoid/font.css'
+    srcLink: '/fonts/monoid/font.css',
   },
   {
     displayName: 'Gintronic',
@@ -85,7 +85,7 @@ const rawFonts: Font[] = [
     price: '50 €',
     ligatures: false,
     webPage: 'https://markfromberg.com/projects/gintronic/',
-    srcLink: '/fonts/gintronic/font.css'
+    srcLink: '/fonts/gintronic/font.css',
   },
   {
     displayName: 'Lilex',
@@ -93,7 +93,7 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'https://github.com/mishamyrt/Lilex',
-    srcLink: '/fonts/lilex/font.css'
+    srcLink: '/fonts/lilex/font.css',
   },
   {
     displayName: 'Victor Mono',
@@ -101,7 +101,7 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'https://rubjo.github.io/victor-mono/',
-    srcLink: 'https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css'
+    srcLink: 'https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css',
   },
   {
     displayName: 'Consolas Ligaturized',
@@ -109,7 +109,7 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'https://github.com/somq/consolas-ligaturized/',
-    srcLink: '/fonts/consolas-ligaturized/font.css'
+    srcLink: '/fonts/consolas-ligaturized/font.css',
   },
   {
     displayName: 'Iosevka',
@@ -117,7 +117,7 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'https://typeof.net/Iosevka/',
-    srcLink: '/fonts/iosevka/font.css'
+    srcLink: '/fonts/iosevka/font.css',
   },
   {
     displayName: 'Iosevka Slab',
@@ -125,7 +125,7 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'https://typeof.net/Iosevka/',
-    srcLink: '/fonts/iosevka-slab/font.css'
+    srcLink: '/fonts/iosevka-slab/font.css',
   },
   {
     displayName: 'Hasklig',
@@ -133,28 +133,28 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'https://github.com/i-tu/Hasklig',
-    srcLink: '/fonts/hasklig/font.css'
+    srcLink: '/fonts/hasklig/font.css',
   },
   {
     displayName: 'Hack',
     familyName: 'Hack',
     sort: 3,
     webPage: 'https://sourcefoundry.org/hack',
-    srcLink: 'https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'
+    srcLink: 'https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css',
   },
   {
     displayName: 'Noto Mono',
     familyName: 'TypoPRO Noto Mono',
     sort: 3,
     webPage: 'https://www.google.com/get/noto/',
-    srcLink: 'https://cdn.jsdelivr.net/npm/@typopro/web-noto@3.7.5/TypoPRO-Noto.css'
+    srcLink: 'https://cdn.jsdelivr.net/npm/@typopro/web-noto@3.7.5/TypoPRO-Noto.css',
   },
   {
     displayName: 'Conta',
     familyName: 'Conta',
     sort: 3,
     webPage: 'https://fontesk.com/conta-typeface/',
-    srcLink: '/fonts/conta/font.css'
+    srcLink: '/fonts/conta/font.css',
   },
   ...googleFonts.map((font) => {
     const { name, ligatures } = font;
@@ -165,9 +165,9 @@ const rawFonts: Font[] = [
       familyName: name,
       webPage: `https://fonts.google.com/specimen/${urlPart}`,
       srcLink: `https://fonts.googleapis.com/css?family=${urlPart}&display=block`,
-      ligatures
+      ligatures,
     };
-  })
+  }),
 ];
 
 export const fonts = orderBy(rawFonts, 'sort');
