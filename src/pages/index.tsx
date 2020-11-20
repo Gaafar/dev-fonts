@@ -114,6 +114,7 @@ export default () => {
               target="_blank"
               rel="noopener noreferrer"
             />
+            <iframe src="https://github.com/sponsors/Gaafar/button" title="Sponsor Gaafar" height="35" width="116" style={{ border: 0 }}></iframe>
           </Row>
         </Row>
         <Row align="middle">
