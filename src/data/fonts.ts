@@ -138,6 +138,13 @@ const rawFonts: Font[] = [
     webPage: 'https://fontesk.com/conta-typeface/',
     srcLink: '/fonts/conta/font.css',
   },
+  {
+    displayName: 'Fantasque Sans Mono',
+    familyName: 'Fantasque Sans Mono',
+    sort: 3,
+    webPage: 'https://github.com/belluzj/fantasque-sans',
+    srcLink: '/fonts/fantasque-sans-mono/font.css',
+  },
   ...googleFonts.map((font) => {
     const { name, ligatures } = font;
     const urlPart = name.replace(/\s/g, '+');

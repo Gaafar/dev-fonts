@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Fantasque Sans Mono';
+    src: url('fantasque-sans-mono-regular.woff2') format('woff2'),
+        url('fantasque-sans-mono-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
