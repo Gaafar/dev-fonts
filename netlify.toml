@@ -1,0 +1,41 @@
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=600"
+
+[[headers]]
+  for = "*.manifest"
+  [headers.values]
+    Cache-Control = "public, max-age=600"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=600"
+
+[[headers]]
+  for = "*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=600"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    # default public, max-age=14400, must-revalidate
+    Cache-Control = "public, max-age=14400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    # default public, max-age=14400, must-revalidate
+    Cache-Control = "public, max-age=14400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=14400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=14400, stale-while-revalidate=604800"
