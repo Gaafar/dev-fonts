@@ -54,12 +54,28 @@ const rawFonts: Font[] = [
     dateAdded: '2020-04-21T17:07:20.226Z',
   },
   {
+    displayName: 'Input Mono',
+    familyName: 'Input Mono',
+    sort: 3,
+    ligatures: true,
+    webPage: 'https://input.fontbureau.com/',
+    srcLink: '/fonts/input-mono/font.css',
+  },
+  {
     displayName: 'JetBrains Mono',
     familyName: 'JetBrains Mono',
     sort: 2,
     ligatures: true,
     webPage: 'https://www.jetbrains.com/lp/mono/',
     srcLink: '/fonts/jetbrains-mono/font.css',
+  },
+  {
+    displayName: 'Julia Mono',
+    familyName: 'Julia Mono',
+    sort: 3,
+    ligatures: true,
+    webPage: 'https://github.com/cormullion/juliamono',
+    srcLink: '/fonts/julia-mono/font.css',
   },
   {
     displayName: 'Monoid',
