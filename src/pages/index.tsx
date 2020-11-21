@@ -71,7 +71,7 @@ export default () => {
       <Helmet>
         <meta property="og:title" content="Dev Fonts" />
         <meta property="og:description" content={shareMessage} />
-        <meta property="og:image" content={process.env.SITE_DOMAIN + "/static/banner.png"} />
+        <meta property="og:image" content="/images/preview.jpeg" />
         <script
           src={`https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/${mode}/${mode}.min.js`}
           // @ts-ignore
