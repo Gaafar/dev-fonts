@@ -71,7 +71,7 @@ export default () => {
       <Helmet>
         <meta property="og:title" content="Dev Fonts" />
         <meta property="og:description" content={shareMessage} />
-        <meta property="og:image" content={window.location.origin + "/static/banner.png"} />
+        <meta property="og:image" content={process.env.SITE_DOMAIN + "/static/banner.png"} />
         <script
           src={`https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/${mode}/${mode}.min.js`}
           // @ts-ignore
@@ -117,7 +117,7 @@ export default () => {
               target="_blank"
               rel="noopener noreferrer"
             />
-            <iframe src="https://github.com/sponsors/Gaafar/button" title="Sponsor Gaafar" height="35" width="116" style={{ border: 0 }}/>
+            <iframe src="https://github.com/sponsors/Gaafar/button" title="Sponsor Gaafar" height="35" width="116" style={{ border: 0 }} />
           </Row>
         </Row>
         <Row align="middle">
@@ -219,7 +219,7 @@ export default () => {
           {' '}
           <Switch className="compare-switch" checked={isCompareMode} onChange={(value) => { setCompareMode(value); }} />
           {' '}
-          { compareSet.size > 0 ? [...compareSet].join(', ') : 'add fonts to compare'}
+          {compareSet.size > 0 ? [...compareSet].join(', ') : 'add fonts to compare'}
         </Row>
         <style>
           {`
