@@ -69,6 +69,9 @@ export default () => {
   return (
     <>
       <Helmet>
+        <meta property="og:title" content="Dev Fonts" />
+        <meta property="og:description" content={shareMessage} />
+        <meta property="og:image" content={process.env.SITE_DOMAIN + "/static/banner.png"} />
         <script
           src={`https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/${mode}/${mode}.min.js`}
           // @ts-ignore
@@ -216,7 +219,7 @@ export default () => {
           {' '}
           <Switch className="compare-switch" checked={isCompareMode} onChange={(value) => { setCompareMode(value); }} />
           {' '}
-          { compareSet.size > 0 ? [...compareSet].join(', ') : 'add fonts to compare'}
+          {compareSet.size > 0 ? [...compareSet].join(', ') : 'add fonts to compare'}
         </Row>
         <style>
           {`
