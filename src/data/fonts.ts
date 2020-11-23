@@ -57,7 +57,7 @@ const rawFonts: Font[] = [
     displayName: 'Input Mono',
     familyName: 'Input Mono',
     sort: 3,
-    ligatures: true,
+    ligatures: false,
     webPage: 'https://input.fontbureau.com/',
     srcLink: '/fonts/input-mono/font.css',
   },
