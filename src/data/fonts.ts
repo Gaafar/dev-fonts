@@ -162,6 +162,14 @@ const rawFonts: Font[] = [
     webPage: 'https://fontesk.com/conta-typeface/',
     srcLink: '/fonts/conta/font.css',
   },
+  {
+    displayName: 'Classic Console',
+    familyName: 'Classic Console',
+    sort: 1,
+    ligatures: false,
+    webPage: 'https://webdraft.eu/fonts/classic-console/',
+    srcLink: '/fonts/classic-console/font.css',
+  },
   ...googleFonts.map((font) => {
     const { name, ligatures } = font;
     const urlPart = name.replace(/\s/g, '+');

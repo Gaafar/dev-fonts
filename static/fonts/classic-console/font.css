@@ -1,0 +1,4 @@
+@font-face {
+  font-family: "Classic Console";
+  src: local('*'), url(clacon.woff) format('woff'), url(clacon.ttf) format('truetype');
+}
