@@ -165,7 +165,7 @@ const rawFonts: Font[] = [
   {
     displayName: 'Classic Console',
     familyName: 'Classic Console',
-    sort: 1,
+    sort: 3,
     ligatures: false,
     webPage: 'https://webdraft.eu/fonts/classic-console/',
     srcLink: '/fonts/classic-console/font.css',
