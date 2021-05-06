@@ -27,7 +27,7 @@ interface Font {
   displayName: string;
   familyName: string;
   sort?: number;
-  ligatures?: boolean,
+  ligatures?: boolean;
   webPage: string;
   srcLink: string;
   price?: string;
