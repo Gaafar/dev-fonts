@@ -44,6 +44,14 @@ const rawFonts: Font[] = [
     srcLink: '/fonts/cascadia/font.css',
   },
   {
+    displayName: 'Comic Mono',
+    familyName: 'Comic Mono',
+    sort: 1,
+    ligatures: false,
+    webPage: 'https://github.com/dtinth/comic-mono-font',
+    srcLink: 'https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.min.css',
+  },
+  {
     displayName: 'Dank Mono',
     familyName: 'dm',
     sort: 2,
