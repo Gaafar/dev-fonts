@@ -107,7 +107,8 @@ const rawFonts: Font[] = [
     sort: 2,
     ligatures: true,
     webPage: 'https://rubjo.github.io/victor-mono/',
-    srcLink: 'https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css',
+    srcLink:
+      'https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css',
   },
   {
     displayName: 'Consolas Ligaturized',
@@ -161,7 +162,8 @@ const rawFonts: Font[] = [
     familyName: 'TypoPRO Noto Mono',
     sort: 3,
     webPage: 'https://www.google.com/get/noto/',
-    srcLink: 'https://cdn.jsdelivr.net/npm/@typopro/web-noto@3.7.5/TypoPRO-Noto.css',
+    srcLink:
+      'https://cdn.jsdelivr.net/npm/@typopro/web-noto@3.7.5/TypoPRO-Noto.css',
   },
   {
     displayName: 'Conta',
