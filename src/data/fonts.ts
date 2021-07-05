@@ -86,14 +86,6 @@ const rawFonts: Font[] = [
     srcLink: '/fonts/monoid/font.css',
   },
   {
-    displayName: 'mononoki',
-    familyName: 'mononoki Regular',
-    sort: 2,
-    ligatures: false,
-    webPage: 'https://madmalik.github.io/mononoki/',
-    srcLink: '/fonts/mononoki/font.css',
-  },
-  {
     displayName: 'Lilex',
     familyName: 'Lilex',
     sort: 2,
@@ -177,6 +169,14 @@ const rawFonts: Font[] = [
     ligatures: false,
     webPage: 'https://webdraft.eu/fonts/classic-console/',
     srcLink: '/fonts/classic-console/font.css',
+  },
+  {
+    displayName: 'Mononoki',
+    familyName: 'mononoki Regular',
+    sort: 3,
+    ligatures: false,
+    webPage: 'https://madmalik.github.io/mononoki/',
+    srcLink: '/fonts/mononoki/font.css',
   },
   {
     displayName: 'Comic Mono',
